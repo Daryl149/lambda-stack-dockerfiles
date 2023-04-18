@@ -1,5 +1,5 @@
-# Use the NVIDIA CUDA 11.6 base image
-FROM nvidia/cuda:11.6-base-ubuntu20.04
+# Use the NVIDIA CUDA 11.4 base image
+FROM nvidia/cuda:11.4.0-base-ubuntu20.04
 
 WORKDIR /root/
 
