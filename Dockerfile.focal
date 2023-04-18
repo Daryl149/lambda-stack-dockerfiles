@@ -1,16 +1,7 @@
-FROM ubuntu:20.04
+# Use the NVIDIA CUDA 11.6 base image
+FROM nvidia/cuda:11.6-base-ubuntu20.04
 
 WORKDIR /root/
-
-# Add libcuda dummy dependency
-ADD control .
-RUN apt-get update && \
-	DEBIAN_FRONTEND=noninteractive apt-get install --yes equivs && \
-	equivs-build control && \
-	dpkg -i libcuda1-dummy_11.6_all.deb && \
-	rm control libcuda1-dummy_11.6_all.deb && \
-	apt-get remove --yes --purge --autoremove equivs && \
-	rm -rf /var/lib/apt/lists/*
 
 # Setup Lambda repository
 ADD lambda.gpg .
