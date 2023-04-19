@@ -37,4 +37,4 @@ RUN apt-get update && \
 # Setup for nvidia-docker
 ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
-ENV NVIDIA_REQUIRE_CUDA "cuda>=10.2"
+ENV NVIDIA_REQUIRE_CUDA "cuda>=11.6"
